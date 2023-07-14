@@ -1,0 +1,36 @@
+﻿@model AgregarNoticiasViewModel
+
+<div class="container">
+    <form asp-action="AgregarNoticias">
+        <div class="mb-3">
+            <label asp-for="Titulo" for="titulo" class="form-label">Titulo</label>
+            <input asp-for="Titulo" class="form-control" placeholder="Ingrese el titulo" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Descripcion" for="descripcion" class="form-label">Descripcion</label>
+            <textarea asp-for="Descripcion" class="form-control" placeholder="Ingrese la descripcion" rows="4"></textarea>
+        </div>
+        <div class="mb-3">
+            <label asp-for="ImagenUrl" for="imagenUrl" class="form-label">Url Imagen</label>
+            <input asp-for="ImagenUrl" class="form-control" placeholder="Ingrese la url de la imagen" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Link" for="link" class="form-label">Link</label>
+            <input asp-for="Link" class="form-control" placeholder="Ingrese el Link" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="Categoria" for="categoria" class="form-label">Categoria</label>
+            <select asp-for="Categoria" class="form-select" aria-label="Default">
+                <option selected>Seleccionar categoria</option>
+                <option value="1">Deportes</option>
+                <option value="2">Noticias</option>
+                <option value="3">Farandulas</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <button class="btn btn-primary" type="submit">Agregar</button>
+        </div>
+    </form>
+</div>

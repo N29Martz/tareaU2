@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Mundo>
+
+@if(Model is not null){
+    <hr class="bg-primary">
+    <div class="font-monospace p-3 mb-2 text-center text-white fs-1 fw-bold" style="background-color: #ADFAF6;">MUNDO</div>
+    <hr class="bg-primary">
+    <h5>Aquí encontraras las últimas noticias que secueden en el mundo:</h5>
+    <hr class="bg-primary">
+    <div class="container">
+        <div class="row row-cols-1 row-cols-3">
+            @foreach (var mundo in Model)
+            {
+                <div class="col">
+                    <div class="card h-100">
+                        <img class="card-img-top p-1" src="@mundo.ImagenUrl" alt="Logo @mundo.Titulo" />
+                        <div class="card-body">
+                            <h5 class="card-title">@mundo.Titulo</h5>
+                            <p class="card-text">@mundo.Descripcion</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-primary" target="_blank" href="@mundo.DireccionURL">leer más</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Mundo>
+@if (Model is not null)
+{
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            @foreach (var mundo in Model)
+            {
+                <div class="col">
+                    <div class="card h-100">
+                        <img class="card-img-top p-1" src="@mundo.ImagenUrl" alt="Logo @mundo.Titulo" />
+                        <div class="card-body">
+                            <h5 class="card-title">@mundo.Titulo</h5>
+                            <p class="card-text">@mundo.Descripcion</p>
+                        </div>
+                        <div class="card-footer">
+                            <a class="btn btn-primary" target="_blank" href="@mundo.DireccionURL">Leer más</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}

@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Deportes>
+
+@if (Model is not null){
+    <div class="text-center" style="padding-top: 6rem;">
+        <hr class="bg-primary">
+        <div class="font-monospace p-3 mb-2 text-center text-white fs-1 fw-bold" style="background-color: #ADFAF6;">DEPORTES</div>
+        <hr class="bg-primary">
+        <p>Aquí encontraras las últimas noticias del deporte nacional e internacional</p>
+        <hr class="bg-primary">
+
+        <div class="container">
+            <div class="row row-cols-1 row-cols-3">
+                @foreach (var deportes in Model)
+                {
+                    <div class="col">
+                        <div class="card h-100">
+                            <img class="card-img-top p-1" src="@deportes.ImagenUrl" alt="Logo @deportes.Titulo" />
+                            <div class="card-body">
+                                <h5 class="card-title">@deportes.Titulo</h5>
+                                <p class="card-text">@deportes.Descripcion</p>
+                            </div>
+                            <div class="card-footer">
+                                <a class="btn btn-primary" target="_blank" href="@deportes.Link">leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}

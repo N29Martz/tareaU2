@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Politica>
+
+@if(Model is not null){
+    <div class="text-center" style="padding-top: 6rem;">
+        <hr class="bg-primary">
+        <div class="font-monospace p-3 mb-2 text-center text-white fs-1 fw-bold" style="background-color: #ADFAF6;">POLÍTICA</div>
+        <hr class="bg-primary">
+        <h5>Aquí encontraras las últimas noticias de la política:</h5>
+        <hr class="bg-primary">
+
+        <div class="container">
+            <div class="row row-cols-1 row-cols-3">
+                @foreach (var politica in Model)
+                {
+                    <div class="col">
+                        <div class="card h-100">
+                            <img class="card-img-top p-1" src="@politica.ImagenUrl" alt="Logo @politica.Titulo" />
+                            <div class="card-body">
+                                <h5 class="card-title">@politica.Titulo</h5>
+                                <p class="card-text">@politica.Descripcion</p>
+                            </div>
+                            <div class="card-footer">
+                                <a class="btn btn-primary" target="_blank" href="@politica.DescripcionURL">leer más</a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+}
